@@ -27,7 +27,7 @@ namespace Hangman
             bool playing = true;
             HashSet<string> lettersGuessed = new HashSet<string>();
             int failures = 0;
-            const int MAX_FAILURES = 5;
+            const int MAX_FAILURES = 6;
             int successes = 0;
             int maxSuccesses = wordLetters.Count;
 
@@ -56,7 +56,7 @@ namespace Hangman
 
                         return total + "_";
                     }
-                ));
+                ) + $"({MAX_FAILURES - failures} lives left)");
 
                 Console.WriteLine("Guess a Letter");
                 string input = Console.ReadLine().ToLower();
